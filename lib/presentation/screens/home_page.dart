@@ -17,6 +17,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Employee List"),
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.search))
+          ],
         ),
         body: Consumer<HomePageController>(builder: (context, model, child) {
           return SafeArea(
@@ -32,7 +35,8 @@ class HomePage extends StatelessWidget {
                                 employeeDataResponse: model.employeeList[i],
                               )));
                     },
-                    child: EmployeeCard( employeeDataResponse: model.employeeList[i]),
+                    child: EmployeeCard(
+                        employeeDataResponse: model.employeeList[i]),
                   );
                 },
               ),
@@ -41,5 +45,3 @@ class HomePage extends StatelessWidget {
         }));
   }
 }
-
-

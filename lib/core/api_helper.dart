@@ -16,11 +16,6 @@ class ApiConfig {
     try {
       Response result = await client.get(
         endpointUrl,
-        options: Options(
-          contentType: Headers.textPlainContentType,
-          responseType: ResponseType.plain,
-          receiveDataWhenStatusError: true,
-        ),
       );
       return ApiResponse.withSuccess(result);
     } on DioError catch (dioError) {
