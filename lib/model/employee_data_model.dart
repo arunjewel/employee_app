@@ -43,7 +43,7 @@ class EmployeeDataResponse {
     "website": website,
   };
   EmployeeDataResponse.fromMap(Map<dynamic, dynamic> mapData) {
-    id = mapData['id'];
+    id =int.parse( mapData['id']);
     name = mapData['name'];
     username = mapData['username'];
     email = mapData['email'];

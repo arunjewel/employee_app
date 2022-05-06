@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                 itemCount: model.employeeList.length,
                 itemBuilder: (context, i) {
                   return ListTile(
-                    title: Text(model.employeeList[0].toString()),
+                    title: Text(model.employeeList[0].name!)
                   );
                 },
               ),

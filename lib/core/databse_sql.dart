@@ -20,7 +20,7 @@ class DatabaseSql {
       onCreate: (Database db, int version) async {
         await db.execute(
           "CREATE TABLE employee_data(id TEXT PRIMARY KEY ,name TEXT,"
-              "fullname TEXT,email TEXT,address TEXT,company TEXT)",
+              "username TEXT,email TEXT,address TEXT,company TEXT)",
         );
       },
     );
@@ -30,7 +30,7 @@ class DatabaseSql {
     await database.transaction((txn) async {
       int id1 = await txn.rawInsert(
           'INSERT INTO employee_data(id,name,username,'
-              'email) VALUES("'
+              'email,company) VALUES("'
               '${employeedetail.id}","${employeedetail.name}","${employeedetail.username}","${employeedetail.email}",'
               '"${employeedetail.name}")');
       print('inserted1: $id1');

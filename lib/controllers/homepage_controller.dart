@@ -45,6 +45,7 @@ class HomePageController extends ChangeNotifier {
     } catch (e) {
       print(e);
     } finally {
+      getDBEmployeeList();
       notifyListeners();
     }
   }
@@ -57,7 +58,11 @@ getDBEmployeeList() async {
     await databaseSql.openDatabaseSql();
 
     _employeeList=   await databaseSql.getData();
-
+    print("vf");
+print(_employeeList.length);
+if(_employeeList.isEmpty){
+  addToEmployeeList();
+}
   } catch (e) {
     print(e);
   } finally {
