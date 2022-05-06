@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      context.read<HomePageController>().getEmployeeList();
+      context.read<HomePageController>().getDBEmployeeList();
     });
 
     return Scaffold(

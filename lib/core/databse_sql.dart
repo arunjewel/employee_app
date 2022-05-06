@@ -46,11 +46,11 @@ class DatabaseSql {
   Future<List<EmployeeDataResponse>> getData() async {
     List<EmployeeDataResponse> empList = [];
     List<Map> list = await database.rawQuery('SELECT * FROM employee_data');
-
+print(list.length);
     /// convert to list employeedetail
-    // list.forEach((map) {
-    //   empList.add(EmployeeDataResponse.fromMap(map));
-    // });
+    list.forEach((map) {
+      empList.add(EmployeeDataResponse.fromMap(map));
+    });
     return  empList;
   }
 

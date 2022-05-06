@@ -6,22 +6,22 @@ String employeeDataResponseToJson(List<EmployeeDataResponse> data) => json.encod
 
 class EmployeeDataResponse {
   EmployeeDataResponse({
-    required this.id,
-    required this.name,
-    required this.username,
-    required this.email,
-    required this.profileImage,
+     this.id,
+     this.name,
+     this.username,
+     this.email,
+     this.profileImage,
     this.phone,
-    required this.website,
+    this.website,
   });
 
-  int id;
-  String name;
-  String username;
-  String email;
-  String profileImage;
-  dynamic phone;
-  String website;
+  int? id;
+  String? name;
+  String? username;
+  String? email;
+  String? profileImage;
+  String ? phone;
+  String? website;
 
   factory EmployeeDataResponse.fromJson(Map<String, dynamic> json) => EmployeeDataResponse(
     id: json["id"],
@@ -42,6 +42,16 @@ class EmployeeDataResponse {
     "phone": phone,
     "website": website,
   };
+  EmployeeDataResponse.fromMap(Map<dynamic, dynamic> mapData) {
+    id = mapData['id'];
+    name = mapData['name'];
+    username = mapData['username'];
+    email = mapData['email'];
+   profileImage=mapData['email'];
+   phone=mapData['email'];
+   website=mapData['email'];
+
+  }
 }
 
 

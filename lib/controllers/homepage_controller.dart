@@ -21,7 +21,7 @@ class HomePageController extends ChangeNotifier {
 
   ///----------------------------------
 
-  getEmployeeList() async {
+  addToEmployeeList() async {
 // ApiResponse apiResponse=
 //  await   apiConfig.getData(endpointUrl: employeeListUrl);
     final Dio dio = Dio();
@@ -51,6 +51,7 @@ class HomePageController extends ChangeNotifier {
 
 
 getDBEmployeeList() async {
+
   try {
     DatabaseSql databaseSql = DatabaseSql();
     await databaseSql.openDatabaseSql();
