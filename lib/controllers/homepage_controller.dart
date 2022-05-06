@@ -26,10 +26,9 @@ class HomePageController extends ChangeNotifier {
 //  await   apiConfig.getData(endpointUrl: employeeListUrl);
     final Dio dio = Dio();
     final Response response = await dio.get(employeeListUrl);
-    print(response.data);
-    List<EmployeeDataResponse> employeeDataResponse =
-        EmployeeDataResponse.fromJson(response.data[0])
-            as List<EmployeeDataResponse>;
+    EmployeeDataResponse employeeDataResponse =
+        EmployeeDataResponse.fromJson(response.data[1])
+    ;
 
     print("nextt");
 
@@ -37,9 +36,10 @@ class HomePageController extends ChangeNotifier {
     try {
       DatabaseSql databaseSql = DatabaseSql();
       await databaseSql.openDatabaseSql();
-      employeeDataResponse.forEach((element) async {
-        await databaseSql.insertData(element);
-      });
+      await databaseSql.insertData(employeeDataResponse);
+      // employeeDataResponse.forEach((element) async {
+      //   await databaseSql.insertData(element);
+      // });
 
       // await databaseSql.getData();
     } catch (e) {
@@ -55,7 +55,7 @@ getDBEmployeeList() async {
     DatabaseSql databaseSql = DatabaseSql();
     await databaseSql.openDatabaseSql();
 
-      await databaseSql.getData();
+    _employeeList=   await databaseSql.getData();
 
   } catch (e) {
     print(e);
