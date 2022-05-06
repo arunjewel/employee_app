@@ -19,11 +19,23 @@ class HomePage extends StatelessWidget {
         body: Consumer<HomePageController>(builder: (context, model, child) {
           return SafeArea(
             child: Container(
+              padding:const EdgeInsets.all(4),
               child: ListView.builder(
                 itemCount: model.employeeList.length,
                 itemBuilder: (context, i) {
-                  return ListTile(
-                    title: Text(model.employeeList[0].name!)
+                  return Card(
+                    
+                    child: Container(
+                      margin:const  EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(model.employeeList[i].name!),
+                          Text(model.employeeList[i].email!),
+                          Text(model.employeeList[i].username!),
+                        ],
+                      ),
+                    ),
                   );
                 },
               ),
