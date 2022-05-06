@@ -47,9 +47,9 @@ class EmployeeDataResponse {
     name = mapData['name'];
     username = mapData['username'];
     email = mapData['email'];
-   profileImage=mapData['email'];
+   profileImage=mapData['profile_image'];
    phone=mapData['email'];
-   website=mapData['email'];
+   website=mapData['company'];
 
   }
 }

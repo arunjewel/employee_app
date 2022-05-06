@@ -18,6 +18,13 @@ class EmployeeCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: 50,
+              width: 50,
+              child: Image.network(
+                employeeDataResponse.profileImage!,
+              ),
+            ),
             Text(employeeDataResponse.name!),
             Text(employeeDataResponse.email!),
             Text(employeeDataResponse.username!),

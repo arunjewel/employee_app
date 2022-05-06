@@ -19,6 +19,13 @@ class EmployeeDetailsPage extends StatelessWidget {
           margin: EdgeInsets.all(20),
           child: ListView(
             children: [
+              Container(
+                height: 100,
+                width: 100,
+                child: Image.network(
+                  employeeDataResponse.profileImage!,
+                ),
+              ),
               Text(employeeDataResponse.username!),
               Text(employeeDataResponse.email!),
               Text(employeeDataResponse.phone!),
