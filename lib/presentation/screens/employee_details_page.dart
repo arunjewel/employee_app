@@ -16,6 +16,7 @@ class EmployeeDetailsPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
+          margin: EdgeInsets.all(20),
           child: ListView(
             children: [
               Text(employeeDataResponse.username!),
